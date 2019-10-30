@@ -4,20 +4,31 @@
 #include<stdio.h>
 
 int main(void){
-int a, b,c;
-cmd = '\0';
-}
+double a = 0, b = 0, result = 0;
+
+char cmd;
+int ErrorCode = 0;
 while(1){
   scanf("%lg%c%lg", &a, &cmd, &b);
   
   switch(cnd){
   case'+':
       printf("%lg + %lg = %lg\n", a, b, a + b);
-      break;
+  break;
   case'-';
-      printf("lg - %lg = %lg\n", a, b, a - b);
+      printf("%lg - %lg = %lg\n", a, b, a - b);
       break;
   case'*':
-      printf("lg * %lg = %lg\n", a, b, a * b);
-      break;
-  
+      printf("%lg * %lg = %lg\n", a, b, a * b);
+  break;
+  case'/':
+      result = division( a, b,  &errorCode);
+      if(ErrorCode == 0)
+         printf(
+         printf("ой\n");
+         errorCode = 0;
+         printf("%lg / %lg = %lg\n", a, b, resDouble);
+   break;
+ return 0;
+ }
+}
