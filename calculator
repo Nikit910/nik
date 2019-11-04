@@ -2,12 +2,18 @@
 *
 *
 #include<stdio.h>
-
+double division(double a, double b, int* ErrorCode) {
+    if(b != 0)
+        return a / b;
+    if(b == 0)
+        *ErrorCode = -1;
+}
 int main(void){
 double a = 0, b = 0, result = 0;
 
 char cmd;
 int ErrorCode = 0;
+int resInt = 0;
 while(1){
   scanf("%lg%c%lg", &a, &cmd, &b);
   
@@ -24,10 +30,15 @@ while(1){
   case'/':
       result = division( a, b,  &errorCode);
       if(ErrorCode == 0)
-         printf(
+         printf("%lg\n", result);
+      if(ErrorCode != 0)
          printf("ой\n");
          errorCode = 0;
-         printf("%lg / %lg = %lg\n", a, b, resDouble);
+   break;
+   case 'D':
+      resInt = div((int) a, (int) b, &errorCode);
+      if(0 == errorCode)
+          printf("%lg D %lg = %d\n", a, b, resInt);
    break;
  return 0;
  }
